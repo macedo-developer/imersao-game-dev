@@ -12,6 +12,8 @@ let inimigo;
 let inimigoGrande;
 let inimigoVoador;
 
+let pontuacao;
+
 const matrizInimigo = [
   [0, 0],
   [105, 0],
@@ -182,6 +184,8 @@ function setup() {
   inimigos.push(inimigoGrande);
   inimigos.push(inimigoVoador);
 
+  pontuacao = new Pontuacao();
+
   frameRate(40);
   // somDoJogo.loop();
 }
@@ -196,6 +200,9 @@ function keyPressed() {
 function draw() {
   cenario.exibe();
   cenario.move();
+
+  pontuacao.exibe();
+  pontuacao.adicionarPonto();
 
   personagem.exibe();
   personagem.aplicaGravidade();
