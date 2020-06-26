@@ -34,7 +34,7 @@ class Personagem extends Animacao {
   }
 
   pula() {
-    if (this.pulos < 2) {
+    if (this.pulos < 3) {
       somDoPulo.play();
       this.velocidadePulo = this.alturaPulo;
       this.pulos++;
