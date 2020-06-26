@@ -67,7 +67,6 @@ class Jogo {
   keyPress(key) {
     if (!gameOver && key === "ArrowUp") {
       personagem.pula();
-      somDoPulo.play();
     }
 
     if (gameOver && key === "Enter") {
