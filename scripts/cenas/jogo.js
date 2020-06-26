@@ -118,6 +118,7 @@ class Jogo {
       somDoJogo.stop();
 
       somGameOver.play();
+      somGameOver.setVolume(0.3);
       somMusicGameOver.play();
       somMusicGameOver.setVolume(0.2);
 
