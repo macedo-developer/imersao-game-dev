@@ -5,6 +5,9 @@ class Jogo {
 
   setup() {
     cenario = new Cenario(imagemCenario, 3);
+
+    vida = new Vida(3, 3);
+
     personagem = new Personagem(
       matrizPersonagem,
       imagemPersonagem,
@@ -65,7 +68,6 @@ class Jogo {
   }
 
   keyPress(key) {
-    console.log(key);
     if (!gameOver && key === "ArrowUp") {
       personagem.pula();
     }
@@ -78,6 +80,8 @@ class Jogo {
   draw() {
     cenario.exibe();
     cenario.move();
+
+    vida.draw();
 
     pontuacao.exibe();
     pontuacao.adicionarPonto();
@@ -100,35 +104,44 @@ class Jogo {
     }
 
     if (personagem.estaColisao(inimigo)) {
-      const largura = windowWidth / 2 - 206;
-      const altura = windowHeight / 2 - 39;
+      vida.perdeVida();
+      personagem.tornaInvencivel();
 
-      gameOver = true;
+      if (vida.vidas === 0) {
+        const largura = windowWidth / 2 - 206;
+        const altura = windowHeight / 2 - 39;
 
-      textFont(fontTelaInicial);
-      textAlign(CENTER);
-      textSize(50);
-      text(`${parseInt(pontuacao.pontos)} Pontos`, width / 2, height / 2 - 60);
+        gameOver = true;
 
-      image(imagemGameOver, largura, altura);
+        textFont(fontTelaInicial);
+        textAlign(CENTER);
+        textSize(50);
+        text(
+          `${parseInt(pontuacao.pontos)} Pontos`,
+          width / 2,
+          height / 2 - 60
+        );
 
-      textFont(fontTelaInicial);
-      textAlign(CENTER);
-      textSize(25);
-      text(
-        "Pressione <Enter> para jogar novamente!",
-        width / 2,
-        height / 2 + 100
-      );
+        image(imagemGameOver, largura, altura);
 
-      somDoJogo.stop();
+        textFont(fontTelaInicial);
+        textAlign(CENTER);
+        textSize(25);
+        text(
+          "Pressione <Enter> para jogar novamente!",
+          width / 2,
+          height / 2 + 100
+        );
 
-      somGameOver.play();
-      somGameOver.setVolume(0.3);
-      somMusicGameOver.play();
-      somMusicGameOver.setVolume(0.2);
+        somDoJogo.stop();
 
-      noLoop();
+        somGameOver.play();
+        somGameOver.setVolume(0.3);
+        somMusicGameOver.play();
+        somMusicGameOver.setVolume(0.2);
+
+        noLoop();
+      }
     }
   }
 }

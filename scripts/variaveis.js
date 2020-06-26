@@ -10,6 +10,7 @@ let imagemInimigo;
 let imagemInimigoGrande;
 let imagemGameOver;
 let imagemInimigoVoador;
+let imagemVida;
 let fontTelaInicial;
 let cenario;
 let somDoJogo;
@@ -22,6 +23,7 @@ let inimigoGrande;
 let inimigoVoador;
 
 let pontuacao;
+let vida;
 let gameOver = true;
 let gamePaused = false;
 
