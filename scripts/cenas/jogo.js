@@ -6,8 +6,8 @@ class Jogo {
 
   setup() {
     cenario = new Cenario(imagemCenario, 3);
-    cenario2 = new Cenario(imagemCenario2, 4);
-    cenario3 = new Cenario(imagemCenario3, 5);
+    cenario2 = new Cenario(imagemCenario2, 6);
+    cenario3 = new Cenario(imagemCenario3, 9);
 
     vida = new Vida(
       fita.configuracoes.vidaMaxima,
@@ -105,7 +105,20 @@ class Jogo {
     const inimigo = inimigos[linhaAtual.inimigo];
     const inimigoVisivel = inimigo.x < -inimigo.largura;
 
-    inimigo.velocidade = linhaAtual.velocidade;
+    if (pontuacao.pontos < 201) {
+      inimigo.velocidade = linhaAtual.velocidade;
+    } else if (pontuacao.pontos > 200 && pontuacao.pontos < 401) {
+      inimigo.velocidade = linhaAtual.velocidade * 1.5;
+    } else if (pontuacao.pontos > 400 && pontuacao.pontos < 501) {
+      inimigo.velocidade = linhaAtual.velocidade * 2.5;
+      cenario3.velocidade = 12;
+    } else if (pontuacao.pontos > 500 && pontuacao.pontos < 601) {
+      inimigo.velocidade = linhaAtual.velocidade * 3;
+      cenario3.velocidade = 16;
+    } else {
+      inimigo.velocidade = linhaAtual.velocidade * 3.5;
+      cenario3.velocidade = 19;
+    }
 
     inimigo.exibe();
     inimigo.move();
