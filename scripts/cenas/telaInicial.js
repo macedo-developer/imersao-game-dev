@@ -7,6 +7,7 @@ class TelaInicial {
     this._imagemFundo();
     this._texto();
     this._botao();
+    this._redes();
   }
 
   _imagemFundo() {
@@ -14,21 +15,26 @@ class TelaInicial {
   }
 
   _texto() {
+    fill(10);
     textFont(fontTelaInicial);
     textAlign(CENTER);
     textSize(50);
-    text("As aventuras da", width / 2, height / 2 - 50);
-    textSize(100);
-    text("Hipstar", width / 2, height / 2 + 50);
+    text("The Aventures of", width / 2, height / 2 - 50);
+    textSize(150);
+    text("Hipstar", width / 2, height / 2 + 80);
 
     textSize(20);
-    textFont("comic sans");
-    text(`Para pular use a tecla ↑ `, width / 2, height / 2 + 150);
+    fill("#fff");
+    text(`To jump use the key arrow up`, width / 2, height / 2 + 240);
     fill(12);
   }
 
   _botao() {
-    botaoGerenciador.y = (height / 7) * 5.5;
+    botaoGerenciador.y = (height / 7) * 5;
     botaoGerenciador.draw();
+  }
+
+  _redes() {
+    linkLinkedin.draw();
   }
 }

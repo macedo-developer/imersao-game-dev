@@ -2,11 +2,13 @@ let fita;
 
 let jogo, telaInicial;
 
-let imagemTelaInicial, botaoGerenciador;
+let imagemTelaInicial, botaoGerenciador, linkLinkedin;
 
-let cenario;
+let cenario, cenario2, cenario3;
 
 let imagemCenario,
+  imagemCenario2,
+  imagemCenario3,
   imagemPersonagem,
   imagemInimigo,
   imagemInimigoGrande,
@@ -16,7 +18,7 @@ let imagemCenario,
 
 let fontTelaInicial;
 
-let somDoJogo, somDoPulo, somGameOver, somMusicGameOver;
+let somDoJogo, somDoPulo, somColisao, somGameOver, somMusicGameOver;
 
 let personagem, inimigo, inimigoGrande, inimigoVoador;
 

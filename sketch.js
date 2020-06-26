@@ -12,7 +12,14 @@ function setup() {
     telaInicial,
   };
 
-  botaoGerenciador = new BotaoGerenciador("Iniciar", width / 2, height / 2);
+  botaoGerenciador = new BotaoGerenciador("Start Game", width / 2, height / 2);
+  linkLinkedin = new CreateLink(
+    "https://www.linkedin.com/in/macedorenata/",
+    '<i class="fab fa-linkedin-in"></i>LinkedIn',
+    20,
+    30,
+    "linkedin"
+  );
 
   somDoJogo.loop();
   somDoJogo.setVolume(0.1);

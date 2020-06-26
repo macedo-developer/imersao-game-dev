@@ -2,6 +2,8 @@ function preload() {
   fita = loadJSON("fita/fita.json");
   imagemTelaInicial = loadImage("imagens/cenario/telaInicial.png");
   imagemCenario = loadImage("imagens/cenario/floresta.png");
+  imagemCenario2 = loadImage("imagens/cenario/floresta1.png");
+  imagemCenario3 = loadImage("imagens/cenario/floresta2.png");
   imagemPersonagem = loadImage("imagens/personagem/correndo.png");
   imagemInimigo = loadImage("imagens/inimigos/gotinha.png");
   imagemInimigoGrande = loadImage("imagens/inimigos/troll.png");
@@ -11,6 +13,7 @@ function preload() {
   fontTelaInicial = loadFont("imagens/assets/fontTelaInicial.otf");
   somDoJogo = loadSound("sons/trilha_jogo.mp3");
   somDoPulo = loadSound("sons/somPulo.mp3");
+  somColisao = loadSound("sons/colisao.mp3");
   somGameOver = loadSound("sons/gameOver.mp3");
   somMusicGameOver = loadSound("sons/musicGameOver.mp3");
 }

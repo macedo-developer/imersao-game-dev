@@ -18,6 +18,7 @@ class BotaoGerenciador {
 
   _alteraCena() {
     this.botao.remove();
+    linkLinkedin.removeLink();
     cenaAtual = "jogo";
 
     gameOver = false;

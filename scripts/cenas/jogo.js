@@ -6,6 +6,8 @@ class Jogo {
 
   setup() {
     cenario = new Cenario(imagemCenario, 3);
+    cenario2 = new Cenario(imagemCenario2, 4);
+    cenario3 = new Cenario(imagemCenario3, 5);
 
     vida = new Vida(
       fita.configuracoes.vidaMaxima,
@@ -79,8 +81,16 @@ class Jogo {
   }
 
   draw() {
-    cenario.exibe();
-    cenario.move();
+    if (pontuacao.pontos < 201) {
+      cenario.exibe();
+      cenario.move();
+    } else if (pontuacao.pontos > 200 && pontuacao.pontos < 400) {
+      cenario2.exibe();
+      cenario2.move();
+    } else {
+      cenario3.exibe();
+      cenario3.move();
+    }
 
     vida.draw();
 
@@ -113,6 +123,8 @@ class Jogo {
       vida.perdeVida();
       personagem.tornaInvencivel();
 
+      somColisao.play();
+
       if (vida.vidas === 0) {
         const largura = windowWidth / 2 - 206;
         const altura = windowHeight / 2 - 39;
@@ -123,7 +135,7 @@ class Jogo {
         textAlign(CENTER);
         textSize(50);
         text(
-          `${parseInt(pontuacao.pontos)} Pontos`,
+          `${parseInt(pontuacao.pontos)} Points`,
           width / 2,
           height / 2 - 60
         );
@@ -134,7 +146,7 @@ class Jogo {
         textAlign(CENTER);
         textSize(25);
         text(
-          "Pressione <Enter> para jogar novamente!",
+          "Press the <Enter> key to start the game",
           width / 2,
           height / 2 + 100
         );

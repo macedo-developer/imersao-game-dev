@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Ubuntu&display=swap");
 
 html,
 body {
@@ -26,4 +26,35 @@ canvas {
 .botao-tela-inicial:hover {
   background-color: #ffc0c1;
   box-shadow: 2px 2px 0px 1px #b58a8a;
+}
+
+.linkedin {
+  width: 200px;
+  height: 40px;
+  margin: 15px;
+
+  border: 1px solid #0274b3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  font-family: "Ubuntu";
+  text-decoration: none;
+  color: #0274b3;
+  text-transform: uppercase;
+
+  transition: background-color, color 400ms;
+}
+
+.linkedin svg {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #0274b3;
+}
+
+.linkedin:hover {
+  background-color: rgba(1, 116, 179, 0.5);
+  color: #fff;
 }
