@@ -14,6 +14,8 @@ let fontTelaInicial;
 let cenario;
 let somDoJogo;
 let somDoPulo;
+let somGameOver;
+let somMusicGameOver;
 let personagem;
 let inimigo;
 let inimigoGrande;

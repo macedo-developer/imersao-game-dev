@@ -14,7 +14,8 @@ function setup() {
 
   botaoGerenciador = new BotaoGerenciador("Iniciar", width / 2, height / 2);
 
-  // somDoJogo.loop();
+  somDoJogo.loop();
+  somDoJogo.setVolume(0.1);
 }
 
 function keyPressed() {

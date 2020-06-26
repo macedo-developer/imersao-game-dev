@@ -9,4 +9,6 @@ function preload() {
   fontTelaInicial = loadFont("imagens/assets/fontTelaInicial.otf");
   somDoJogo = loadSound("sons/trilha_jogo.mp3");
   somDoPulo = loadSound("sons/somPulo.mp3");
+  somGameOver = loadSound("sons/gameOver.mp3");
+  somMusicGameOver = loadSound("sons/musicGameOver.mp3");
 }

@@ -115,6 +115,12 @@ class Jogo {
         height / 2 + 100
       );
 
+      somDoJogo.stop();
+
+      somGameOver.play();
+      somMusicGameOver.play();
+      somMusicGameOver.setVolume(0.2);
+
       noLoop();
     }
   }
