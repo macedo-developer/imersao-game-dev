@@ -1,12 +1,16 @@
 class Jogo {
   constructor() {
-    this.inimigoAtual = 0;
+    this.indice = 0;
+    this.mapa = fita.mapa;
   }
 
   setup() {
     cenario = new Cenario(imagemCenario, 3);
 
-    vida = new Vida(3, 3);
+    vida = new Vida(
+      fita.configuracoes.vidaMaxima,
+      fita.configuracoes.vidaInicial
+    );
 
     personagem = new Personagem(
       matrizPersonagem,
@@ -28,8 +32,7 @@ class Jogo {
       52,
       104,
       104,
-      10,
-      100
+      10
     );
 
     const inimigoGrande = new Inimigo(
@@ -41,8 +44,7 @@ class Jogo {
       200,
       400,
       400,
-      10,
-      500
+      10
     );
 
     const inimigoVoador = new Inimigo(
@@ -54,8 +56,7 @@ class Jogo {
       75,
       200,
       150,
-      10,
-      1000
+      10
     );
 
     gameOver = false;
@@ -89,18 +90,23 @@ class Jogo {
     personagem.exibe();
     personagem.aplicaGravidade();
 
-    const inimigo = inimigos[this.inimigoAtual];
+    const linhaAtual = this.mapa[this.indice];
+
+    const inimigo = inimigos[linhaAtual.inimigo];
     const inimigoVisivel = inimigo.x < -inimigo.largura;
+
+    inimigo.velocidade = linhaAtual.velocidade;
 
     inimigo.exibe();
     inimigo.move();
 
     if (inimigoVisivel) {
-      this.inimigoAtual = parseInt(random(0, 3));
+      this.indice++;
 
-      if (this.inimigoAtual > 2) this.inimigoAtual = parseInt(random(0, 2));
+      inimigo.aparece();
 
-      inimigo.velocidade = parseInt(random(10, 30));
+      if (this.indice > this.mapa.length - 1)
+        this.indice = parseInt(random(0, 2));
     }
 
     if (personagem.estaColisao(inimigo)) {

@@ -1,3 +1,5 @@
+let fita;
+
 let jogo;
 let telaInicial;
 
