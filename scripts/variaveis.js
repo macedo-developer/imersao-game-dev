@@ -20,6 +20,7 @@ let inimigoGrande;
 let inimigoVoador;
 
 let pontuacao;
+let gameOver = true;
 
 const matrizInimigo = [
   [0, 0],

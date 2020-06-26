@@ -8,7 +8,7 @@ class Jogo {
     personagem = new Personagem(
       matrizPersonagem,
       imagemPersonagem,
-      0,
+      25,
       30,
       110,
       135,
@@ -55,6 +55,8 @@ class Jogo {
       1000
     );
 
+    gameOver = false;
+
     inimigos.push(inimigo);
     inimigos.push(inimigoGrande);
     inimigos.push(inimigoVoador);
@@ -63,9 +65,13 @@ class Jogo {
   }
 
   keyPress(key) {
-    if (key === "ArrowUp") {
+    if (!gameOver && key === "ArrowUp") {
       personagem.pula();
       somDoPulo.play();
+    }
+
+    if (gameOver && key === "Enter") {
+      window.location.reload();
     }
   }
 
@@ -97,7 +103,18 @@ class Jogo {
       const largura = windowWidth / 2 - 206;
       const altura = windowHeight / 2 - 39;
 
+      gameOver = true;
       image(imagemGameOver, largura, altura);
+
+      textFont(fontTelaInicial);
+      textAlign(CENTER);
+      textSize(25);
+      text(
+        "Pressione <Enter> para jogar novamente!",
+        width / 2,
+        height / 2 + 100
+      );
+
       noLoop();
     }
   }
