@@ -55,11 +55,8 @@ class Personagem extends Animacao {
 
   tornaInvencivel() {
     this.invencivel = true;
-    console.log(this.invencivel);
 
-    setTimeout(() => {
-      this.invencivel = false;
-    }, 1000);
+    setTimeout(() => (this.invencivel = false), 1000);
   }
 
   estaColisao(inimigo) {

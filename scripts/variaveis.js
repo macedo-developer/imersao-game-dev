@@ -1,31 +1,28 @@
 let fita;
 
-let jogo;
-let telaInicial;
+let jogo, telaInicial;
 
-let imagemTelaInicial;
-let botaoGerenciador;
+let imagemTelaInicial, botaoGerenciador;
 
-let imagemCenario;
-let imagemPersonagem;
-let imagemInimigo;
-let imagemInimigoGrande;
-let imagemGameOver;
-let imagemInimigoVoador;
-let imagemVida;
-let fontTelaInicial;
 let cenario;
-let somDoJogo;
-let somDoPulo;
-let somGameOver;
-let somMusicGameOver;
-let personagem;
-let inimigo;
-let inimigoGrande;
-let inimigoVoador;
+
+let imagemCenario,
+  imagemPersonagem,
+  imagemInimigo,
+  imagemInimigoGrande,
+  imagemGameOver,
+  imagemInimigoVoador,
+  imagemVida;
+
+let fontTelaInicial;
+
+let somDoJogo, somDoPulo, somGameOver, somMusicGameOver;
+
+let personagem, inimigo, inimigoGrande, inimigoVoador;
 
 let pontuacao;
 let vida;
+
 let gameOver = true;
 let gamePaused = false;
 
