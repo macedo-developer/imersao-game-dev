@@ -91,11 +91,11 @@ class Jogo {
     inimigo.move();
 
     if (inimigoVisivel) {
-      this.inimigoAtual++;
+      this.inimigoAtual = parseInt(random(0, 2));
 
-      if (this.inimigoAtual > 2) this.inimigoAtual = 0;
+      if (this.inimigoAtual > 2) this.inimigoAtual = parseInt(random(0, 2));
 
-      inimigo.velocidade = parseInt(random(10, 20));
+      inimigo.velocidade = parseInt(random(10, 30));
     }
 
     if (personagem.estaColisao(inimigo)) {
@@ -103,6 +103,12 @@ class Jogo {
       const altura = windowHeight / 2 - 39;
 
       gameOver = true;
+
+      textFont(fontTelaInicial);
+      textAlign(CENTER);
+      textSize(50);
+      text(`${parseInt(pontuacao.pontos)} Pontos`, width / 2, height / 2 - 60);
+
       image(imagemGameOver, largura, altura);
 
       textFont(fontTelaInicial);
