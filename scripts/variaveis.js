@@ -23,6 +23,7 @@ let inimigoVoador;
 
 let pontuacao;
 let gameOver = true;
+let gamePaused = false;
 
 const matrizInimigo = [
   [0, 0],

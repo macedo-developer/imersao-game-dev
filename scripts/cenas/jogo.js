@@ -65,6 +65,7 @@ class Jogo {
   }
 
   keyPress(key) {
+    console.log(key);
     if (!gameOver && key === "ArrowUp") {
       personagem.pula();
     }
@@ -91,7 +92,7 @@ class Jogo {
     inimigo.move();
 
     if (inimigoVisivel) {
-      this.inimigoAtual = parseInt(random(0, 2));
+      this.inimigoAtual = parseInt(random(0, 3));
 
       if (this.inimigoAtual > 2) this.inimigoAtual = parseInt(random(0, 2));
 
